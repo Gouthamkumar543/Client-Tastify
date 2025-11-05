@@ -20,7 +20,7 @@ const LandingPage = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img src='https://i.deeezy.com/uploads/thumbnails/213/21348-a244d775662ca16ec674b5d7da953c39.jpg' alt='img' style={{ objectFit: "cover", width: "100%", height: "800px" }} />
+                    <img src='https://png.pngtree.com/background/20250105/original/pngtree-asian-food-background-with-various-ingredients-on-rustic-stone-picture-image_15454529.jpg' alt='img' style={{ objectFit: "cover", width: "100%", height: "800px" }} />
                     <Carousel.Caption>
                         <h3>Third slide label</h3>
                         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
