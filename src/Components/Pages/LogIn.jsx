@@ -11,19 +11,24 @@ const LogIn = () => {
         setShow(false)
         Navigate("/")
     }
-    const userDetails = (x)=>{
-        setLoginDetails({...loginDetails,[x.target.name]:x.target.value})
-        console.log(loginDetails);
-        
+    const userDetails = (x) => {
+        setLoginDetails({ ...loginDetails, [x.target.name]: x.target.value })
+        // console.log(loginDetails);
     }
     const submitDetails = async (x) => {
         x.preventDefault()
         try {
-            axios.post("https://server-tasty.onrender.com/admins/login",loginDetails)
-            alert("login Done")
-            Navigate("/")
+            const response = await axios.post("https://server-tasty.onrender.com/admins/login", loginDetails)
+            // console.log(response);
+                localStorage.setItem("token",response.data.token)
+                localStorage.setItem("persist",true)
+                alert("login Done")
+                Navigate("/restaurant")
         } catch (error) {
             console.error(error);
+            if (error.response) {
+                alert("Invalid credentials")
+            }
         }
     }
     return (
@@ -31,7 +36,7 @@ const LogIn = () => {
             <Modal show={show} onHide={closeModal}>
                 <Form onSubmit={submitDetails}>
                     <Modal.Header closeButton>
-                        <Modal.Title>SignUp</Modal.Title>
+                        <Modal.Title>LogIn</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group className="mb-3">

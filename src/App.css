@@ -2,4 +2,35 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  overflow: hidden;
+}
+.restaurant{
+  display: flex;
+}
+.leftSide-restaurant{
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: 100vh;
+  row-gap: 5%;
+  padding-top: 3%;
+}
+.leftSide-restaurant span{
+  font-weight: bold;
+}
+.rightSide-restaurant{
+  width: 80%;
+  height: 100vh;
+}
+.rightSide-restaurant div{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.restaurantDetails{
+  border: 2px solid black;
+  width: 60%;
 }
