@@ -1,13 +1,15 @@
-*{
+* {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
   overflow: hidden;
 }
-.restaurant{
+
+.restaurant {
   display: flex;
 }
-.leftSide-restaurant{
+
+.leftSide-restaurant {
   background-color: aqua;
   display: flex;
   flex-direction: column;
@@ -17,20 +19,54 @@
   row-gap: 5%;
   padding-top: 3%;
 }
-.leftSide-restaurant span{
+
+.leftSide-restaurant span {
   font-weight: bold;
+  cursor: pointer;
 }
-.rightSide-restaurant{
+
+.leftSide-restaurant span:hover {
+  color: white;
+}
+
+.leftSide-restaurant span:active {
+  color: gray;
+}
+
+.rightSide-restaurant {
   width: 80%;
   height: 100vh;
 }
-.rightSide-restaurant div{
+
+.restaurantDiv {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 5%;
 }
-.restaurantDetails{
+
+.restaurantDetails {
+  width: 40%;
+  height: 80%;
+  padding: 3% 5%;
   border: 2px solid black;
-  width: 60%;
+  border-radius: 3%;
+  box-shadow: 1px 5px 5px 2px gray;
+}
+
+.productDiv {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 4%;
+}
+
+.productDetails {
+  width: 40%;
+  height: 85%;
+  padding: 3% 5%;
+  border: 2px solid black;
+  border-radius: 3%;
+  box-shadow: 1px 5px 5px 2px gray;
+
 }
