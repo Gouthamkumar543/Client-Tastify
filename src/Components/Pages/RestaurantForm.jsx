@@ -25,17 +25,22 @@ const RestaurantForm = () => {
         formData.append("type", type)
         formData.append("image", file)
         try {
-            await axios.post("https://server-tasty.onrender.com/restaurants", formData, {
+            const response = await axios.post("https://server-tasty.onrender.com/restaurants", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     token: `${token}`
                 }
             })
+            localStorage.setItem("restaurantId", response.data.restaurantId)
+            setRestaurantDetails({})
+            setFile(null)
             alert("Done ")
         } catch (error) {
             console.error(error);
             if (error.response) {
                 alert("adding failed")
+            } else if (error.response == "restaurant already exists") {
+                alert("restaurant already exists")
             }
         }
     }

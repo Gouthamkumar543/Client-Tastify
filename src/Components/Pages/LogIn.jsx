@@ -20,10 +20,20 @@ const LogIn = () => {
         try {
             const response = await axios.post("https://server-tasty.onrender.com/admins/login", loginDetails)
             // console.log(response);
-                localStorage.setItem("token",response.data.token)
-                localStorage.setItem("persist",true)
-                alert("login Done")
+            alert("login Done")
+            localStorage.setItem("token", response.data.token)
+            localStorage.setItem("persist", true)
+            try {
+                const adminResponse = await axios.get(`https://server-tasty.onrender.com/admins/${response.data.adminId}`)
+                // console.log(adminResponse.data.restaurantId);
+                if (adminResponse.status == 200) {
+                    const restaurantId = adminResponse.data.restaurantId
+                    localStorage.setItem("restaurantId", restaurantId)
+                }
+            } catch (error) {
                 Navigate("/restaurant")
+            }
+            Navigate("/restaurant")
         } catch (error) {
             console.error(error);
             if (error.response) {

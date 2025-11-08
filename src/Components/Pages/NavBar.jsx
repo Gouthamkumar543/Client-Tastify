@@ -8,6 +8,7 @@ const NavBar = () => {
     const logOut = ()=>{
         localStorage.removeItem("persist")
         localStorage.removeItem("token")
+        localStorage.removeItem("restaurantId")
         Navigate("/")
     }
     return (

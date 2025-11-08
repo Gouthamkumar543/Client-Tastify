@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Carousel } from "react-bootstrap"
+import { useNavigate } from 'react-router-dom'
 
 const LandingPage = () => {
+    const restaurantId = localStorage.getItem("restaurantId")
+    const Navigate = useNavigate()
+    if (restaurantId) {
+        Navigate("/restaurant")
+    }
     return (
         <div>
             <Carousel fade>
